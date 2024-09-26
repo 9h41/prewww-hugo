@@ -51,7 +51,7 @@ jobs:
         with:
           version: 9
       - name: Install Node.js dependencies
-        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && pnpm install || true"
+        run: "[[ -f pnpm-lock.json ]] && pnpm install || true"
       - name: Build TinaCMS
         env:
           TINA_CLIENT_ID: ${{ secrets.NEXT_TINA_PUBLIC_CLIENT_ID }}
